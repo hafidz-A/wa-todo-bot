@@ -33,7 +33,21 @@ src/
 test/           tes otomatis (npm test)
 ```
 
-## Menjalankan di VPS (Ubuntu/Debian)
+## Pasang / update di VPS dengan satu perintah (Ubuntu/Debian)
+
+Buka konsol VPS lalu tempel:
+
+```bash
+bash <(curl -fsSL https://raw.githubusercontent.com/hafidz-A/wa-todo-bot/main/dist/install.sh)
+```
+
+Skrip ini memasang Node.js 22 dan pm2 kalau belum ada, lalu menawarkan untuk mematikan bot lama dan memakai ulang
+API key, nomor, serta sesi WhatsApp-nya (disalin, folder bot lama tidak diubah). Setelah itu bot baru
+dijalankan di `/opt/wa-todo-bot`. Untuk update nanti, jalankan perintah yang sama lagi. Data dan `.env` tidak ditimpa.
+
+Setiap kali kode berubah, buat ulang skripnya dengan `./scripts/build-installer.sh` lalu commit `dist/install.sh`.
+
+## Menjalankan di VPS secara manual
 
 1. **Pasang Node.js 22** dan alat build:
    ```bash
